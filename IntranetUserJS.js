@@ -130,12 +130,12 @@ $('#holdings').each(function() {
 // *************************************************************************************
 // Ändrar automatiskt till itemtype "BARNBOK" om man skriver in Hcf, Hcg eller något med litet u 
 // i Full call number vid exemplarinläggning eller redigering.
-// ver 1
+// ver 1.1
 
 
 $('#subfield952o input:first').change(function() {
 
-  if ($(this).val().indexOf('Hcf') > -1 | $(this).val().indexOf('Hcg') > -1 | $(this).val().startsWith('u',0)) {
+  if ($(this).val().indexOf('Hcf') > -1 | $(this).val().indexOf('Hcg') > -1 | $(this).val().startsWith('u',0) | $(this).val().indexOf(',u') > -1 ) {
 
     $('select[id^="tag_952_subfield_y"]').select2('val','BARNBOK');
 
